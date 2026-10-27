@@ -6,8 +6,7 @@ import {
 import { toast } from "sonner";
 import { LogoMark } from "@/components/Logo";
 import WhatsAppIcon from "@/components/WhatsAppIcon";
-
-const API = `${process.env.REACT_APP_BACKEND_URL || "http://localhost:8000"}/api`;
+import { API_BASE } from "@/lib/api";
 
 const FIELD =
   "h-11 rounded-xl border-white/10 bg-white/[0.04] text-white placeholder:text-gray-500 focus-visible:ring-[#9F5937] focus-visible:border-[#9F5937]";
@@ -22,7 +21,7 @@ function formatApiErrorDetail(detail) {
 }
 
 async function api(path, options = {}) {
-  const res = await fetch(`${API}${path}`, {
+  const res = await fetch(`${API_BASE}${path}`, {
     credentials: "include",
     headers: { "Content-Type": "application/json" },
     ...options,
@@ -161,7 +160,7 @@ export default function Admin() {
     } catch (e) {
       if (e.status === 401) {
         try {
-          await fetch(`${API}/admin/refresh`, { method: "POST", credentials: "include" });
+          await fetch(`${API_BASE}/admin/refresh`, { method: "POST", credentials: "include" });
           await api("/admin/me");
           await loadInquiries();
           setState("ready");

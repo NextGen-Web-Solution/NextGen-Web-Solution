@@ -8,9 +8,9 @@ import { Label } from "@/components/ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import SectionHeading from "@/components/SectionHeading";
 import WhatsAppIcon from "@/components/WhatsAppIcon";
+import { API_BASE } from "@/lib/api";
 
 const EASE = [0.22, 1, 0.36, 1];
-const API = `${process.env.REACT_APP_BACKEND_URL || "http://localhost:8000"}/api`;
 
 const SERVICE_OPTIONS = [
   "Full-Stack Web App",
@@ -36,7 +36,7 @@ export default function Contact() {
     if (submitting) return;
     setSubmitting(true);
     try {
-      const response = await fetch(`${API}/contact`, {
+      const response = await fetch(`${API_BASE}/contact`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(form),
@@ -188,7 +188,7 @@ export default function Contact() {
                     data-testid="contact-form-name-input"
                     value={form.name}
                     onChange={update("name")}
-                    placeholder="Aarav Sharma"
+                    placeholder="Enter your name"
                     required
                     minLength={2}
                     className={FIELD}
