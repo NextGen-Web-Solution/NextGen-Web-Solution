@@ -13,16 +13,50 @@ const jwtSecret = process.env.JWT_SECRET || 'development-only-change-me';
 const adminEmail = (process.env.ADMIN_EMAIL || 'admin@example.com').toLowerCase();
 const adminPassword = process.env.ADMIN_PASSWORD || 'change-this-password';
 const adminPasswordHash = bcrypt.hashSync(adminPassword, 10);
-const allowedOrigins = (process.env.CORS_ORIGINS || 'http://localhost:3000').split(',').map((s) => s.trim());
-const emailFromName = process.env.EMAIL_FROM_NAME || 'NextGen Web Solutions';
-const ownerEmail = process.env.OWNER_EMAIL || 'nextgenwebsolution08@gmail.com';
-const missingEmailConfig = ['EMERGENT_EMAIL_KEY'].filter((key) => !process.env[key]);
+const allowedOrigins = (
+  process.env.CORS_ORIGINS ||
+  "http://localhost:3000,https://frontend-six-mocha-14.vercel.app"
+)
+  .split(",")
+  .map((origin) => origin.trim())
+  .filter(Boolean);
+
+const emailFromName =
+  process.env.EMAIL_FROM_NAME || "NextGen Web Solutions";
+
+const ownerEmail =
+  process.env.OWNER_EMAIL || "nextgenwebsolution08@gmail.com";
+
+const missingEmailConfig = ["EMERGENT_EMAIL_KEY"].filter(
+  (key) => !process.env[key]
+);
+
 if (missingEmailConfig.length) {
-  console.warn(`Email notifications are disabled; missing configuration: ${missingEmailConfig.join(', ')}`);
+  console.warn(
+    `Email notifications are disabled; missing configuration: ${missingEmailConfig.join(", ")}`
+  );
 }
 
-app.use(cors({ origin: (origin, done) => done(null, !origin || allowedOrigins.includes('*') || allowedOrigins.includes(origin)), credentials: true }));
-app.use(express.json({ limit: '1mb' }));
+app.use(
+  cors({
+    origin(origin, callback) {
+      if (
+        !origin ||
+        allowedOrigins.includes("*") ||
+        allowedOrigins.includes(origin)
+      ) {
+        return callback(null, true);
+      }
+
+      return callback(new Error("Origin not allowed by CORS"));
+    },
+    credentials: true,
+    methods: ["GET", "POST", "PATCH", "OPTIONS"],
+    allowedHeaders: ["Content-Type", "Authorization"],
+  })
+);
+
+app.use(express.json({ limit: "1mb" }));
 app.use(cookieParser());
 
 const fail = (res, status, detail) => res.status(status).json({ detail });
