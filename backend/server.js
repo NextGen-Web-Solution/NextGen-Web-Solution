@@ -15,10 +15,11 @@ const adminPassword = process.env.ADMIN_PASSWORD || 'change-this-password';
 const adminPasswordHash = bcrypt.hashSync(adminPassword, 10);
 const allowedOrigins = (
   process.env.CORS_ORIGINS ||
-  "http://localhost:3000,https://frontend-six-mocha-14.vercel.app"
+  "http://localhost:3000,https://frontend-b9e77kqs4-next-gen-web-solution.vercel.app,https://frontend-six-mocha-14.vercel.app"
 )
   .split(",")
   .map((origin) => origin.trim())
+  .concat("https://frontend-b9e77kqs4-next-gen-web-solution.vercel.app")
   .filter(Boolean);
 
 const emailFromName =
@@ -58,6 +59,13 @@ app.use(
 
 app.use(express.json({ limit: "1mb" }));
 app.use(cookieParser());
+app.use((req, _res, next) => {
+  const queryStart = req.url.indexOf("?");
+  const pathname = queryStart < 0 ? req.url : req.url.slice(0, queryStart);
+  const query = queryStart < 0 ? "" : req.url.slice(queryStart);
+  req.url = `${pathname.replace(/\/{2,}/g, "/")}${query}`;
+  next();
+});
 
 const fail = (res, status, detail) => res.status(status).json({ detail });
 const isEmail = (value) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value || '');
