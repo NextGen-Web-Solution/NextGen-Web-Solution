@@ -58,7 +58,13 @@ function Home() {
 
 export default function App() {
   useEffect(() => {
-    const lenis = new Lenis({ lerp: 0.09, smoothWheel: true });
+    const lenis = new Lenis({
+      lerp: 0.14,
+      smoothWheel: true,
+      syncTouch: false,
+      wheelMultiplier: 1,
+      touchMultiplier: 1,
+    });
     window.__lenis = lenis;
     let rafId;
     const raf = (time) => {
