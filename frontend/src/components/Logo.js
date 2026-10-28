@@ -21,7 +21,7 @@ export const Logo = () => (
   <span className="flex items-center gap-2.5">
     <LogoMark />
     <span className="font-display text-lg font-bold tracking-tight text-white">
-      NextGen<span className="text-gradient"> Web</span>
+      The<span className="text-gradient">ZipCode</span>
     </span>
   </span>
 );

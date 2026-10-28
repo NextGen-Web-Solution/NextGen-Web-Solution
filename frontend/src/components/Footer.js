@@ -20,7 +20,7 @@ export default function Footer() {
         <div>
           <Logo />
           <p className="mt-5 max-w-xs text-sm leading-relaxed text-gray-400">
-            NextGen Web Solutions - Crafting future-ready digital experiences.
+            TheZipCode - Crafting future-ready digital experiences.
           </p>
           <p className="mt-2 text-sm font-medium text-gray-500">
             Transforming Ideas into Scalable Web Solutions.
@@ -31,7 +31,7 @@ export default function Footer() {
               target="_blank"
               rel="noopener noreferrer"
               data-testid="footer-instagram-link"
-              aria-label="NextGen Web Solutions on Instagram"
+              aria-label="TheZipCode on Instagram"
               className="group flex h-10 w-10 items-center justify-center rounded-full border border-white/10 bg-white/[0.04] text-gray-300 transition-colors duration-200 hover:border-[#9F5937]/50 hover:text-orange-200"
             >
               <Instagram size={17} className="transition-transform duration-300 group-hover:scale-110" />
@@ -102,7 +102,7 @@ export default function Footer() {
 
       <div className="border-t border-white/[0.07] py-6">
         <p className="text-center text-sm text-gray-500">
-          © {year} NextGen Web Solutions. All rights reserved.
+          © {year} TheZipCode. All rights reserved.
         </p>
       </div>
     </footer>

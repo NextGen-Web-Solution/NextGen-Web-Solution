@@ -42,7 +42,7 @@ export default function Navbar() {
           data-testid="navbar-logo-button"
           onClick={() => go("home")}
           className="cursor-pointer"
-          aria-label="NextGen Web Solutions — home"
+          aria-label="TheZipCode — home"
         >
           <Logo />
         </button>

@@ -92,7 +92,7 @@ export default function Hero() {
             data-testid="hero-subheadline"
           >
             From custom full-stack web apps and dynamic corporate portals to e-commerce
-            engines—NextGen Web Solutions delivers robust digital platforms engineered for
+            engines—TheZipCode delivers robust digital platforms engineered for
             conversion, speed, and reliability.
           </motion.p>
 

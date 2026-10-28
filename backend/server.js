@@ -23,7 +23,7 @@ const allowedOrigins = (
   .filter(Boolean);
 
 const emailFromName =
-  process.env.EMAIL_FROM_NAME || "NextGen Web Solutions";
+  process.env.EMAIL_FROM_NAME || "TheZipCode";
 
 const ownerEmail =
   process.env.OWNER_EMAIL || "nextgenwebsolution08@gmail.com";
@@ -99,10 +99,10 @@ async function sendInquiryEmail(inquiry) {
     headers: { 'X-Email-Key': EMERGENT_EMAIL_KEY, 'Content-Type': 'application/json' },
     body: JSON.stringify({
       to: [ownerEmail],
-      subject: 'New Project Inquiry — NextGen Web Solutions',
+      subject: 'New Project Inquiry — TheZipCode',
       from_name: emailFromName,
       contact_email: process.env.EMAIL_REPLY_TO || inquiry.email,
-      html: `<table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:#f8fafc;font-family:Arial,sans-serif"><tr><td style="padding:24px"><h2 style="color:#0f172a">New Project Inquiry</h2><p style="color:#64748b">Received from the NextGen Web Solutions contact form.</p><table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:#fff">${rows}</table></td></tr></table>`,
+      html: `<table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:#f8fafc;font-family:Arial,sans-serif"><tr><td style="padding:24px"><h2 style="color:#0f172a">New Project Inquiry</h2><p style="color:#64748b">Received from TheZipCode contact form.</p><table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:#fff">${rows}</table></td></tr></table>`,
     }),
     signal: AbortSignal.timeout(10000),
   });
@@ -142,7 +142,7 @@ async function sendWhatsAppLeadAlert(inquiry) {
   return true;
 }
 
-app.get('/', (_req, res) => res.json({ message: 'NextGen Web Solutions API is running', health: '/api/' }));
+app.get('/', (_req, res) => res.json({ message: 'TheZipCode API is running', health: '/api/' }));
 app.get('/api/', (_req, res) => res.json({ message: 'Hello World' }));
 app.post('/api/status', (req, res) => {
   if (typeof req.body.client_name !== 'string' || !req.body.client_name.trim()) return fail(res, 422, 'client_name is required');
@@ -232,4 +232,4 @@ app.use((err, _req, res, _next) => {
   console.error(err);
   res.status(500).json({ detail: 'Internal server error' });
 });
-app.listen(port, () => console.log(`NextGen API listening on http://localhost:${port}`));
+app.listen(port, () => console.log(`TheZipCode API listening on http://localhost:${port}`));

@@ -174,7 +174,7 @@ export default function Admin() {
   };
 
   useEffect(() => {
-    document.title = "NextGen Admin";
+    document.title = "TheZipCode Admin";
     const meta = document.createElement("meta");
     meta.name = "robots";
     meta.content = "noindex, nofollow";
@@ -250,7 +250,7 @@ export default function Admin() {
           <div className="flex items-center gap-3">
             <LogoMark size={40} />
             <div>
-              <h1 className="font-display text-xl font-bold tracking-tight text-white">NextGen Admin</h1>
+              <h1 className="font-display text-xl font-bold tracking-tight text-white">TheZipCode Admin</h1>
               <p className="text-xs text-gray-400">Private inquiries dashboard</p>
             </div>
           </div>
@@ -321,7 +321,7 @@ export default function Admin() {
           <div className="flex items-center gap-3">
             <LogoMark size={32} />
             <div>
-              <p className="font-display text-base font-bold tracking-tight">NextGen Admin</p>
+              <p className="font-display text-base font-bold tracking-tight">TheZipCode Admin</p>
               <p className="text-[11px] text-gray-400">Inquiries dashboard</p>
             </div>
           </div>

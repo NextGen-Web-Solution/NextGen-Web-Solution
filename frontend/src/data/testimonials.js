@@ -3,7 +3,7 @@
 export const TESTIMONIALS = [
   {
     quote:
-      "NextGen rebuilt our online store and the checkout is lightning fast now. Website inquiries doubled within two months of launch.",
+      "TheZipCode rebuilt our online store and the checkout is lightning fast now. Website inquiries doubled within two months of launch.",
     name: "Priya M.",
     role: "Founder, D2C Brand",
     initials: "PM",
