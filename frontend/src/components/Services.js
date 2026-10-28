@@ -69,8 +69,8 @@ export default function Services() {
                 <span className="pointer-events-none absolute right-7 top-6 font-display text-4xl font-bold text-white/[0.05]">
                   0{i + 1}
                 </span>
-                <span className="relative w-fit rounded-xl border border-white/10 bg-gradient-to-br from-[#9F5937]/25 to-[#D2A078]/15 p-3 text-orange-200">
-                  <s.icon size={22} />
+                <span className="relative inline-flex h-12 w-12 items-center justify-center rounded-xl border border-white/10 bg-gradient-to-br from-[#9F5937]/25 to-[#D2A078]/15 text-orange-200 shadow-[inset_0_1px_0_rgba(255,255,255,0.06)] transition-[transform,border-color] duration-300 group-hover:-translate-y-0.5 group-hover:border-[#D2A078]/30">
+                  <s.icon size={21} strokeWidth={1.8} />
                 </span>
                 <h3 className="relative mt-6 font-display text-lg font-semibold tracking-tight text-white">
                   {s.title}
