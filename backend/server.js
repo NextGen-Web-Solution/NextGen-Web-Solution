@@ -26,7 +26,7 @@ const emailFromName =
   process.env.EMAIL_FROM_NAME || "TheZipCode";
 
 const ownerEmail =
-  process.env.OWNER_EMAIL || "nextgenwebsolution08@gmail.com";
+  process.env.OWNER_EMAIL || "workforzipcode@gmail.com";
 
 const missingEmailConfig = ["EMERGENT_EMAIL_KEY"].filter(
   (key) => !process.env[key]

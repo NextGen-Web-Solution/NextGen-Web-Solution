@@ -66,12 +66,12 @@ export default function Footer() {
           <ul className="mt-5 space-y-3">
             <li>
               <a
-                href="mailto:nextgenwebsolution08@gmail.com"
+                href="mailto:workforzipcode@gmail.com"
                 data-testid="footer-email-link"
                 className="inline-flex items-center gap-2.5 text-sm text-gray-300 transition-colors duration-200 hover:text-orange-200"
               >
                 <Mail size={15} className="text-orange-200" />
-                nextgenwebsolution08@gmail.com
+                workforzipcode@gmail.com
               </a>
             </li>
             <li>

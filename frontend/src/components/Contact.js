@@ -127,7 +127,7 @@ export default function Contact() {
               <div className="my-7 h-px bg-white/[0.07]" />
 
               <a
-                href="mailto:nextgenwebsolution08@gmail.com"
+                href="mailto:workforzipcode@gmail.com"
                 data-testid="contact-email-link"
                 className="group flex items-center gap-4"
               >
@@ -139,7 +139,7 @@ export default function Contact() {
                     Official Email
                   </span>
                   <span className="mt-0.5 block font-medium text-white transition-colors duration-200 group-hover:text-orange-200">
-                    nextgenwebsolution08@gmail.com
+                    workforzipcode@gmail.com
                   </span>
                 </span>
               </a>
